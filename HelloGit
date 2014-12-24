@@ -1,0 +1,32 @@
+
+	* git init   #把这个目录变为Git可以管理的版本库（在目录中会多出一个。git的目录，Windows下为隐藏状态）
+	* git add  <file> #告诉Git，把文件提交到版本库中，可以多次添加后一起提交
+	* git add -A/--all #添加所有被修改的文件
+	* git commit -m"description"  #提交所修改的文件，并进行描述
+	* git status  #这个命令可以让我们随时掌握版本库当前的状态，可以看到那些文件被修改了，提交的状态，如果没有任何修改会提示nothing to commit（work directory clean）
+	* git diff <file>  #我们可以看看文件到底被修改了那些内容
+	* git log  #显示从最近到最远的提交日志，如果嫌输出内容太多可以加上 --pretty=online参数输出时间线（commit-id）和描述
+	* git reset --hard connit_id  #HEAD指向的版本就是当前的版本，可以通过制定commit-id来改变文件版本，可以先用git log命令来查看历史，以便确定回退到哪个版本
+	* git reflog  #可以查看命令历史，以便确定回退到哪个版本
+	* git checkout -- file #把文件在工作区的修改（包括删除，添加等）全部撤销掉
+	* git reset HEAD file #把在暂存区的修改（包括删除，添加等）撤销
+	* git rm file #用于删除一个文件
+	* git remote add origin SSH_clone_URL #关联一个远程库
+	* git push -u origin master #第一次推送master分支所有内容
+	* git push origin master #第一次推送后，每次推送最新的修改
+	* git clone SSH_clone_URL #克隆远程版本库
+	* git branch #查看分支
+	* git branch <name> #创建分支
+	* git merge #合并指定分支到当前分支
+	* git checkout <name>#切换到制定分支
+	* git checkout -b <name> #创建并切换分支
+	* git branch -d <name> #删除指定分支
+	* git pull #从远程抓取分支
+	* git branch --set-upstream branch-name origin/branch-name #建立本地分支和远程分支关联
+	* git checkout -b branch-name origin/branch-name #在本地创建和远程分支对应的分支
+	* git stash #把当前的工作进行“储藏”
+	* git stash list #查看“储藏区”列表
+	* git stash apply #把“储藏区”的工作回复到工作区，但是不删除stash中的内容
+	* git stash pop #把“储藏区”的工作回复到工作区，并且删除stash中的内容
+
+当要忽略某些文件的时候，需要自己编写.gitignore文件，.gitignore文件本身要放在版本库中，并且可以对.gitignore做版本管理
